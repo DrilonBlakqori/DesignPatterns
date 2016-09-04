@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Design Patterns</string>
+
+    <array name="burger_array">
+        <item>Chicken</item>
+        <item>Beef</item>
+        <item>Fish</item>
+    </array>
+</resources>

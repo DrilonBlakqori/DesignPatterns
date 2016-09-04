@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/appBarLayout"
+        android:padding="@dimen/space">
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/burgerSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space"/>
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/sauceCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sauce"/>
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/cheeseCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cheese"/>
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/tomatoCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tomato"/>
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/cucumbercheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cucumber"/>
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/saladCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salad"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buildButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Build"
+        android:layout_margin="@dimen/space"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_question_answer_white_24dp"
+        tools:ignore="RelativeOverlap"/>
+
+</RelativeLayout>
