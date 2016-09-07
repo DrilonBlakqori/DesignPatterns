@@ -28,7 +28,7 @@
         </activity>
 
         <activity
-            android:name=".activities.AdapterPoolActivity"
+            android:name=".activities.AdapterPoolDecoratorActivity"
             android:screenOrientation="portrait"
             android:label="Adapter Pool"/>
     </application>

@@ -7,7 +7,7 @@ import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 
 import java.util.ArrayList;
 
-import drilon.com.designpatterns.activities.AdapterPoolActivity;
+import drilon.com.designpatterns.activities.AdapterPoolDecoratorActivity;
 import drilon.com.designpatterns.activities.BuilderActivity;
 import drilon.com.designpatterns.model.PatternModel;
 import drilon.com.designpatterns.view.MainView;
@@ -29,7 +29,7 @@ public class MainPresenter extends MvpBasePresenter<MainView> {
 				context.startActivity(new Intent(context, BuilderActivity.class));
 				break;
 			case 2:
-				context.startActivity(new Intent(context, AdapterPoolActivity.class));
+				context.startActivity(new Intent(context, AdapterPoolDecoratorActivity.class));
 				break;
 			case 3:
 				break;
