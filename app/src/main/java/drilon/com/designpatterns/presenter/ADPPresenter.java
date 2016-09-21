@@ -7,13 +7,13 @@ import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 import java.util.ArrayList;
 
 import drilon.com.designpatterns.model.SimpleRecyclerModel;
-import drilon.com.designpatterns.view.AdapterPoolDecoratorView;
+import drilon.com.designpatterns.view.ADPView;
 
-public class AdapterPoolDecoratorPresenter extends MvpBasePresenter<AdapterPoolDecoratorView> {
+public class ADPPresenter extends MvpBasePresenter<ADPView> {
 
 	Context context;
 
-	public AdapterPoolDecoratorPresenter(Context context) {
+	public ADPPresenter(Context context) {
 		this.context = context;
 	}
 

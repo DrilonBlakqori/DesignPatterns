@@ -14,11 +14,11 @@ import butterknife.ButterKnife;
 import drilon.com.designpatterns.R;
 import drilon.com.designpatterns.model.SimpleRecyclerModel;
 
-public class AdapterPoolAdapter extends RecyclerView.Adapter<AdapterPoolAdapter.AdapterPoolViewHolder> {
+public class ADPAdapter extends RecyclerView.Adapter<ADPAdapter.AdapterPoolViewHolder> {
 
 	private ArrayList<SimpleRecyclerModel> items;
 
-	public AdapterPoolAdapter() {
+	public ADPAdapter() {
 		items = new ArrayList<>();
 	}
 

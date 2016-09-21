@@ -2,22 +2,18 @@ package drilon.com.designpatterns.model;
 
 public class PatternModel {
 
-	String name;
+	private String[] names;
 
-	public PatternModel(String name) {
-		this.name = name;
+	public PatternModel(String[] names) {
+		this.names = names;
 	}
 
-	public String getName() {
-		return name;
+	public String getName(int i) {
+		return names[i];
 	}
 
-	public String getInitials() {
-		String[] names = name.split("&");
-		String initials = "";
-		for (String name : names) {
-			initials += name.trim().charAt(0);
-		}
-		return initials;
+	public String getInitials(int i) {
+
+		return "" + names[i].charAt(0);
 	}
 }

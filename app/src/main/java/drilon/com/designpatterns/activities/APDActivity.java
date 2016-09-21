@@ -14,13 +14,13 @@ import com.hannesdorfmann.mosby.mvp.MvpActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import drilon.com.designpatterns.R;
-import drilon.com.designpatterns.adapter.AdapterPoolAdapter;
-import drilon.com.designpatterns.presenter.AdapterPoolDecoratorPresenter;
+import drilon.com.designpatterns.adapter.ADPAdapter;
+import drilon.com.designpatterns.presenter.ADPPresenter;
 import drilon.com.designpatterns.utils.DividerDecoration;
 import drilon.com.designpatterns.utils.LeftLineDecoration;
-import drilon.com.designpatterns.view.AdapterPoolDecoratorView;
+import drilon.com.designpatterns.view.ADPView;
 
-public class AdapterPoolDecoratorActivity extends MvpActivity<AdapterPoolDecoratorView, AdapterPoolDecoratorPresenter> implements AdapterPoolDecoratorView {
+public class APDActivity extends MvpActivity<ADPView, ADPPresenter> implements ADPView {
 
 	@BindView(R.id.toolbar)
 	Toolbar toolbar;
@@ -31,7 +31,7 @@ public class AdapterPoolDecoratorActivity extends MvpActivity<AdapterPoolDecorat
 	@BindView(R.id.leftLinesCheckBox)
 	AppCompatCheckBox leftLinesCheckBox;
 
-	private AdapterPoolAdapter adapter;
+	private ADPAdapter adapter;
 	private DividerDecoration dividerDecoration;
 	private LeftLineDecoration leftLineDecoration;
 
@@ -54,12 +54,12 @@ public class AdapterPoolDecoratorActivity extends MvpActivity<AdapterPoolDecorat
 
 	@NonNull
 	@Override
-	public AdapterPoolDecoratorPresenter createPresenter() {
-		return new AdapterPoolDecoratorPresenter(this);
+	public ADPPresenter createPresenter() {
+		return new ADPPresenter(this);
 	}
 
 	public void setupRecycler() {
-		adapter = new AdapterPoolAdapter();
+		adapter = new ADPAdapter();
 		recyclerView.setAdapter(adapter);
 		recyclerView.setLayoutManager(new LinearLayoutManager(this));
 		adapter.addAll(presenter.getData());

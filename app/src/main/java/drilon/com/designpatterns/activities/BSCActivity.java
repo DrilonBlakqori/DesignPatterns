@@ -2,10 +2,8 @@ package drilon.com.designpatterns.activities;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatCheckBox;
 import android.support.v7.widget.AppCompatSpinner;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,11 +16,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import drilon.com.designpatterns.R;
-import drilon.com.designpatterns.model.Burger;
-import drilon.com.designpatterns.presenter.BuilderPresenter;
-import drilon.com.designpatterns.view.BuilderView;
+import drilon.com.designpatterns.presenter.BSCPresenter;
+import drilon.com.designpatterns.view.BSCView;
 
-public class BuilderActivity extends MvpActivity<BuilderView, BuilderPresenter> implements BuilderView {
+public class BSCActivity extends MvpActivity<BSCView, BSCPresenter> implements BSCView {
 
 	@BindView(R.id.toolbar)
 	Toolbar toolbar;
@@ -74,8 +71,8 @@ public class BuilderActivity extends MvpActivity<BuilderView, BuilderPresenter> 
 
 	@NonNull
 	@Override
-	public BuilderPresenter createPresenter() {
-		return new BuilderPresenter();
+	public BSCPresenter createPresenter() {
+		return new BSCPresenter();
 	}
 
 	@Override
@@ -105,6 +102,6 @@ public class BuilderActivity extends MvpActivity<BuilderView, BuilderPresenter> 
 
 	@Override
 	public void showMessage(String message) {
-		Toast.makeText(BuilderActivity.this, message, Toast.LENGTH_LONG).show();
+		Toast.makeText(BSCActivity.this, message, Toast.LENGTH_LONG).show();
 	}
 }

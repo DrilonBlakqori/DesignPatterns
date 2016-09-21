@@ -7,7 +7,8 @@
     <dimen name="space_extra_large">24dp</dimen>
 
     <!--Main activity-->
-    <dimen name="main_picture_size">48dp</dimen>
+    <dimen name="main_picture_height">48dp</dimen>
+    <dimen name="main_picture_width">60dp</dimen>
     <dimen name="divider_height">1dp</dimen>
     <dimen name="divider_side_margin">@dimen/space</dimen>
     <dimen name="left_line_width">2dp</dimen>

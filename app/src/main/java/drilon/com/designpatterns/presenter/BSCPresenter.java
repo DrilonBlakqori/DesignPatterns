@@ -3,9 +3,9 @@ package drilon.com.designpatterns.presenter;
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 
 import drilon.com.designpatterns.model.Burger;
-import drilon.com.designpatterns.view.BuilderView;
+import drilon.com.designpatterns.view.BSCView;
 
-public class BuilderPresenter extends MvpBasePresenter<BuilderView> {
+public class BSCPresenter extends MvpBasePresenter<BSCView> {
 
 	private int type;
 

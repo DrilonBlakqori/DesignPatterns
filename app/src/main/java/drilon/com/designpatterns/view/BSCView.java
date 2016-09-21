@@ -2,7 +2,7 @@ package drilon.com.designpatterns.view;
 
 import com.hannesdorfmann.mosby.mvp.MvpView;
 
-public interface BuilderView extends MvpView {
+public interface BSCView extends MvpView {
 
 	boolean isSauceChecked();
 

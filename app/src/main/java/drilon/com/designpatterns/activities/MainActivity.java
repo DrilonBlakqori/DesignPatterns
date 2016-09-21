@@ -32,8 +32,7 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		ButterKnife.bind(this);
-		setSupportActionBar(toolbar);
-		toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
+		toolbar.setNavigationIcon(R.mipmap.ic_launcher);
 		setupRecycler();
 	}
 

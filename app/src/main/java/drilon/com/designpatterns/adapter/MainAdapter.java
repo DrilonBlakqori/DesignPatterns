@@ -35,8 +35,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
 
 	@Override
 	public void onBindViewHolder(final MainViewHolder holder, int position) {
-		holder.icon.setText(items.get(position).getInitials());
-		holder.text.setText(items.get(position).getName());
+		holder.iconTextOne.setText(items.get(position).getInitials(0));
+		holder.patternTextOne.setText(items.get(position).getName(0));
+		holder.iconTextTwo.setText(items.get(position).getInitials(1));
+		holder.patternTextTwo.setText(items.get(position).getName(1));
+		holder.iconTextThree.setText(items.get(position).getInitials(2));
+		holder.patternTextThree.setText(items.get(position).getName(2));
 		holder.itemView.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -44,7 +48,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
 			}
 		});
 	}
-
 
 	@Override
 	public int getItemCount() {
@@ -59,12 +62,20 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
 
 	class MainViewHolder extends RecyclerView.ViewHolder {
 
-		@BindView(R.id.icon)
-		TextView icon;
-		@BindView(R.id.text)
-		TextView text;
+		@BindView(R.id.iconTextOne)
+		TextView iconTextOne;
+		@BindView(R.id.patternTextOne)
+		TextView patternTextOne;
+		@BindView(R.id.iconTextTwo)
+		TextView iconTextTwo;
+		@BindView(R.id.patternTextTwo)
+		TextView patternTextTwo;
+		@BindView(R.id.iconTextThree)
+		TextView iconTextThree;
+		@BindView(R.id.patternTextThree)
+		TextView patternTextThree;
 
-		public MainViewHolder(View itemView) {
+		MainViewHolder(View itemView) {
 			super(itemView);
 			ButterKnife.bind(this, itemView);
 		}
