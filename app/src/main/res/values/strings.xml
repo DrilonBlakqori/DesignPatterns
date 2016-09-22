@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Design Patterns</string>
 
+    <string name="main_description">Paternat e dizajnit janë përshkrime të objekteve komunikuese dhe klasave që janë të përshtatura për të zgjedhur një problem të përgjithshëm në një kontekst të veçantë.\n\nKlikoni në njërën nga grupet e paternave për të parë implementimin e tyre.</string>
+
+    <string name="adp_description">Paterna Adapter është implementuar për të adaptuar modelin në pamje.\n\nPaterna Decorator është implementuar për të shtuar dekorim pamjes, pa penguar scroll eventin.\n\nPaterna Object Pool është implementuar për të ripërdorur objektet e pamjes ne scroll, që të sigurohet smooth scroll.</string>
+
+    <string name="bsc_description">Paterna Builder është implementuar për të ndërtuar instancën e objektit Burger.\n\nPaterna Singleton është implementuar për të ju qasur instancës së objektit Command.\n\nPaterna Command është implementuar për të komunikuar me aktivitetin bazë.</string>
+
     <array name="burger_array">
         <item>Chicken</item>
         <item>Beef</item>

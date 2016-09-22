@@ -15,4 +15,6 @@ public interface BSCView extends MvpView {
 	boolean isSaladChecked();
 
 	void showMessage(String message);
+
+	void showDialog(String description);
 }

@@ -25,7 +25,7 @@ public class ADPAdapter extends RecyclerView.Adapter<ADPAdapter.AdapterPoolViewH
 	@Override
 	public AdapterPoolViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_adapter_pool, parent, false);
+		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_adp, parent, false);
 
 		return new AdapterPoolViewHolder(view);
 	}

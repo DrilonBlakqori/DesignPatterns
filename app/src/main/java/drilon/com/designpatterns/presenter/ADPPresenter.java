@@ -6,6 +6,7 @@ import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 
 import java.util.ArrayList;
 
+import drilon.com.designpatterns.R;
 import drilon.com.designpatterns.model.SimpleRecyclerModel;
 import drilon.com.designpatterns.view.ADPView;
 
@@ -24,5 +25,12 @@ public class ADPPresenter extends MvpBasePresenter<ADPView> {
 		}
 
 		return list;
+	}
+
+	public void fabClicked() {
+		if (isViewAttached()) {
+			//noinspection ConstantConditions
+			getView().showDialog(context.getString(R.string.adp_description));
+		}
 	}
 }

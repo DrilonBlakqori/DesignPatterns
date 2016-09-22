@@ -1,9 +1,11 @@
 package drilon.com.designpatterns.adapter;
 
+import android.support.v7.widget.AppCompatCheckBox;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -11,13 +13,14 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import drilon.com.designpatterns.R;
-import drilon.com.designpatterns.activities.MainActivity;
+import drilon.com.designpatterns.activity.MainActivity;
 import drilon.com.designpatterns.model.PatternModel;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder> {
 
 	private ArrayList<PatternModel> items;
 	private MainActivity mainActivity;
+	private AppCompatCheckBox checkBox;
 
 	public MainAdapter(MainActivity mainActivity) {
 
@@ -47,6 +50,24 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
 				mainActivity.onItemClick(holder.getAdapterPosition());
 			}
 		});
+		if (position == 0) {
+			checkBox = holder.checkBox;
+			holder.checkBox.setVisibility(View.VISIBLE);
+			holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+				@Override
+				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+					if (!isChecked) {
+						mainActivity.orderChecked();
+						enableCheckBox(false);
+					}
+				}
+			});
+		}
+	}
+
+	public void enableCheckBox(boolean enabled) {
+		checkBox.setEnabled(enabled);
+		checkBox.setChecked(enabled);
 	}
 
 	@Override
@@ -74,6 +95,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
 		TextView iconTextThree;
 		@BindView(R.id.patternTextThree)
 		TextView patternTextThree;
+		@BindView(R.id.checkBox)
+		AppCompatCheckBox checkBox;
 
 		MainViewHolder(View itemView) {
 			super(itemView);

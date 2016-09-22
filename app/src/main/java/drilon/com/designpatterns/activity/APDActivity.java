@@ -1,5 +1,7 @@
-package drilon.com.designpatterns.activities;
+package drilon.com.designpatterns.activity;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.AppCompatCheckBox;
@@ -13,8 +15,10 @@ import com.hannesdorfmann.mosby.mvp.MvpActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import drilon.com.designpatterns.R;
 import drilon.com.designpatterns.adapter.ADPAdapter;
+import drilon.com.designpatterns.dialog.DescriptionDialogFragment;
 import drilon.com.designpatterns.presenter.ADPPresenter;
 import drilon.com.designpatterns.utils.DividerDecoration;
 import drilon.com.designpatterns.utils.LeftLineDecoration;
@@ -38,9 +42,8 @@ public class APDActivity extends MvpActivity<ADPView, ADPPresenter> implements A
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_adapter_pool);
+		setContentView(R.layout.activity_adp);
 		ButterKnife.bind(this);
-		setSupportActionBar(toolbar);
 		toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
 			@Override
@@ -90,6 +93,25 @@ public class APDActivity extends MvpActivity<ADPView, ADPPresenter> implements A
 				adapter.notifyDataSetChanged();
 			}
 		});
+	}
+
+	@OnClick(R.id.fab)
+	public void fabClicked() {
+		presenter.fabClicked();
+	}
+
+	@Override
+	public void showDialog(String description) {
+		FragmentTransaction ft = getFragmentManager().beginTransaction();
+		Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+		if (prev != null) {
+			ft.remove(prev);
+		}
+		ft.addToBackStack(null);
+
+		// Create and show the dialog.
+		DescriptionDialogFragment newFragment = DescriptionDialogFragment.getInstance(description);
+		newFragment.show(ft, "dialog");
 	}
 
 }

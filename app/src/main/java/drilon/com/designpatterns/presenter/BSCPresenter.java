@@ -1,13 +1,24 @@
 package drilon.com.designpatterns.presenter;
 
+import android.content.Context;
+
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 
+import drilon.com.designpatterns.R;
+import drilon.com.designpatterns.command.Commander;
+import drilon.com.designpatterns.command.OrderReceivedEvent;
 import drilon.com.designpatterns.model.Burger;
+import drilon.com.designpatterns.utils.Utils;
 import drilon.com.designpatterns.view.BSCView;
 
 public class BSCPresenter extends MvpBasePresenter<BSCView> {
 
 	private int type;
+	private Context context;
+
+	public BSCPresenter(Context context) {
+		this.context = context;
+	}
 
 	public void onSpinnerItemSelected(int position) {
 		switch (position) {
@@ -31,46 +42,16 @@ public class BSCPresenter extends MvpBasePresenter<BSCView> {
 				.setSalad(getView().isSaladChecked())
 				.setTomato(getView().isTomatoChecked())
 				.build();
-			getView().showMessage(generateBurgerMessage(burger));
+			getView().showMessage(Utils.generateBurgerMessage(Utils.TYPE_BUILD, burger));
+			Commander.getInstance().post(new OrderReceivedEvent(burger));
 		}
 	}
 
-	private String generateBurgerMessage(Burger burger) {
-		String message = "You have built a " + burger.getName();
-
-		if (burger.getSauce() != null) {
-			message += "(with free " + burger.getSauce() + ")";
+	public void fabClicked() {
+		if (isViewAttached()) {
+			//noinspection ConstantConditions
+			getView().showDialog(context.getString(R.string.bsc_description));
 		}
-		boolean first = true;
-		if (burger.hasCheese()) {
-			message += " with: cheese";
-			first = false;
-		}
-		if (burger.hasSalad()) {
-			if (first) {
-				message += " with: salad";
-				first = false;
-			} else {
-				message += ", salad";
-			}
-		}
-		if (burger.hasCucumber()) {
-			if (first) {
-				message += " with: cucumber";
-				first = false;
-			} else {
-				message += ", cucumber";
-			}
-		}
-		if (burger.hasTomato()) {
-			if (first) {
-				message += " with: tomato";
-			} else {
-				message += ", tomato";
-			}
-		}
-		message += ".";
-		return message;
 	}
 
 }
